@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>詳細便便資訊</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="details-page">
+  <button id="backBtn" class="icon-btn back-btn">← 返回</button>
+  
+  <h1 id="dateTitle">詳細便便資訊</h1>
+
+  <div class="record-form">
+    <input type="time" id="timeInput" placeholder="時間" />
+
+    <div class="poop-type-buttons">
+      <button type="button" data-type="poop1"><img src="../assets/poop1.png" alt="💩1" /> </button>
+      <button type="button" data-type="poop2"><img src="../assets/poop2.png" alt="💩2" /> </button>
+      <button type="button" data-type="poop3"><img src="../assets/poop3.png" alt="💩3" /> </button>
+      <button type="button" data-type="poop4"><img src="../assets/poop4.png" alt="💩4" /> </button>
+    </div>
+
+    <input type="text" id="noteInput" placeholder="備註" />
+    <button id="addBtn" class="icon-btn">➕</button>
+  </div>
+
+  <div id="records" class="card-container"></div>
+
+  <script src="detail.js"></script>
+</body>
+</html>
