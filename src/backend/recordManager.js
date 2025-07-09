@@ -1,7 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const { app } = require('electron');
 
-const dataFile = path.join(__dirname, '..', 'poop-record.json');
+const dataDir = path.join(app.getPath('userData'), 'poop-records');
+const dataFile = path.join(dataDir, 'poop-record.json');
+
+function ensureDataFile() {
+  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+  if (!fs.existsSync(dataFile)) fs.writeFileSync(dataFile, JSON.stringify({}));
+}
 
 function loadAll() {
   if (!fs.existsSync(dataFile)) return {};
@@ -35,5 +42,6 @@ module.exports = {
   saveRecord,
   getRecordsByDate,
   loadAll,
-  deleteRecord
+  deleteRecord,
+  ensureDataFile
 };

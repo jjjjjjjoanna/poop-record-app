@@ -34,6 +34,7 @@ function createDetailsWindow(dateStr) {
 }
 
 app.whenReady().then(() => {
+  recordManager.ensureDataFile();
   createWindow();
 
   app.on("activate", () => {

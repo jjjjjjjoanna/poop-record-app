@@ -23,7 +23,6 @@ dateTitle.textContent = `${dateStr}`;
 
 const poopButtons = document.querySelectorAll('.poop-type-buttons button');
 
-// 預設選擇第一個便便類型
 poopButtons[0].classList.add('selected');
 selectedPoopType = poopButtons[0].dataset.type;
 
